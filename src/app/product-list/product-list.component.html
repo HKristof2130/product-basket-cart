@@ -1,0 +1,21 @@
+
+<table>
+    <thead>
+        <h3>Products</h3>
+        <tr>
+            <td>Product</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of currentProductList">
+            <td>{{product.productName}}</td>
+            <td>{{product.productPrice | number: '0.2-4'}} Ft</td>
+            <td>
+                <button (click)="putToBasket(product.productCategory)">+</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

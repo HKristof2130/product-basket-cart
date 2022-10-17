@@ -1,0 +1,21 @@
+<h3>Basket</h3>
+<table>
+    <thead>
+        <tr>
+            <td>Product</td>
+            <td>Amount</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productsInBasket">
+            <td>{{product.name}}</td>
+            <td>{{product.amount}}</td>
+            <td>
+                <button (click)="addItem(product.name)">+</button>
+            </td>
+            <td>
+                <button (click)="subtractItem(product.name)">-</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
