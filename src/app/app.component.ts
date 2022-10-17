@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductInBasket } from './basket/basket-product.type';
+import { ProductInBasket } from './product-in-basket.type.ts/product-in-basket';
 import { ProductService } from './product-service/product.service';
-import { ProductCategory, ProductType } from './product-types/produt.types';
+import { ProductCategory, ProductType } from './product-type/produt.types';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,7 @@ import { ProductCategory, ProductType } from './product-types/produt.types';
   providers: [ProductService],
 })
 export class AppComponent implements OnInit {
+  
   productList: ProductType[] = [];
   productsToBasket: ProductInBasket[] = [];
   title = "product-basket-cart";

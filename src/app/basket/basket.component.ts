@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { ProductCategory } from '../product-types/produt.types';
-import { ProductInBasket } from './basket-product.type';
+import { ProductCategory } from '../product-type/produt.types';
+import { ProductInBasket } from '../product-in-basket.type.ts/product-in-basket';
 
 @Component({
   selector: 'app-basket',

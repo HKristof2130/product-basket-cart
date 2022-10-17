@@ -1,23 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductService } from '../product-service/product.service';
-import { ProductCategory, ProductType } from '../product-types/produt.types';
+import { ProductCategory, ProductType } from '../product-type/produt.types';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
-  providers: [ProductService]
+  providers: [ProductService],
 })
 export class ProductListComponent implements OnInit {
 
-
-  putToBasket(type: ProductCategory) {
-    let amount: any = this.itemsForBasket.get(type);
-    amount++;
-    this.itemsForBasket.set(type, amount)
-
-    this.sendProductsToBasket.emit(this.itemsForBasket);
-  }
 
   itemsForBasket: Map<string, number> = new Map<string, number>();
   @Input() currentProductList: ProductType[] = [];
@@ -35,6 +27,13 @@ export class ProductListComponent implements OnInit {
     this.itemsForBasket.set(ProductCategory.HAMMER, 0);
   }
 
+  putToBasket(type: ProductCategory) {
+    let amount: any = this.itemsForBasket.get(type);
+    amount++;
+    this.itemsForBasket.set(type, amount)
+
+    this.sendProductsToBasket.emit(this.itemsForBasket);
+  }
   
 
 }
